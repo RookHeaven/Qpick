@@ -1,3 +1,32 @@
+# Qpick
+
+The project is still in development...
+
+Test task for Neoflex company.
+
+"Qpick" is an online store audio accessories. <br>
+Add items to your cart, select the required quantity of one item. <br>
+Go to the cart page and open the order popup.
+
+The project was created using React + Typescript + Vite. <br>
+Technologies used : Redux Toolkit, React-Router-V6, SVGR.
+
+<div>
+    <img src="./Qpick.png" alt="My Project PNG" width="2072" style="width: 100%; height: auto">
+</div>
+
+### Q [View published version](https://qpick-five.vercel.app/)
+
+# Quick Start Guide
+Before you begin, ensure that **Node.js** is installed on your system.
+
+### Main Commands
+- Installation - `npm install`
+- Start Local Development Server - `npm run dev`
+- Build Project - `npm run build`
+- Lint Code - `npm run lint`
+- Preview Production Build Locally - `npm run preview`
+
 # React + TypeScript + Vite
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
