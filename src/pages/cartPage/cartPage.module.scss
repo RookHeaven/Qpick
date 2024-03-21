@@ -1,0 +1,19 @@
+@import '../../style/variables';
+
+.cart {
+  display: block;
+
+  &__title {
+    margin-top: 0;
+    margin-bottom: 14px;
+    font-weight: 600;
+    font-size: 20px;
+    color: $blackRussian;
+  }
+
+  &__wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+}

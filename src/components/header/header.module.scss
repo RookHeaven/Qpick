@@ -1,0 +1,80 @@
+@import '../../style/variables';
+@import '../../style/mixins';
+
+.header {
+  margin-bottom: 29px;
+
+  &__container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &__logo {
+    font-weight: 700;
+    font-size: 25px;
+    color: $blackTitle;
+    text-decoration: none;
+    transition: all $trans-default;
+
+    @include hover-focus {
+      color: darken($yellowOrange, 8%);
+    }
+
+    @include active {
+      color: darken($yellowOrange, 20%);
+      opacity: 0.8;
+    }
+  }
+
+  &__buttonsList {
+    margin: 0 -11px 0 0;
+    padding: 0;
+    display: flex;
+    list-style: none;
+  }
+
+  &__link {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 62px;
+    min-height: 60px;
+    color: $grey;
+    transition: all $trans-default;
+
+    @include hover-focus {
+      background-color: darken($yellowOrange, 8%);
+      color: $white;
+
+      .header__iconSum {
+        background-color: $grey;
+      }
+    }
+
+    @include active {
+      background-color: darken($yellowOrange, 20%);
+      opacity: 0.8;
+      color: $white;
+
+      .header__iconSum {
+        background-color: $grey;
+      }
+    }
+  }
+
+  &__iconSum {
+    font-size: 15px;
+    font-weight: 500;
+    position: absolute;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    text-align: center;
+    top: 13px;
+    right: 8px;
+    background-color: $yellowOrange;
+    color: $white;
+  }
+}

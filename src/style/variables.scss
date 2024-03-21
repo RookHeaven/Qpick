@@ -1,0 +1,25 @@
+// Project palette
+
+$white:                   #ffffff;
+$black:                   #000000;
+$black-10:                rgba(0, 0, 0, 0.1);
+$black-25:                rgba(0, 0, 0, 0.25);
+$blackRussian:            #1c1c27;
+$blackTitle:              #101010;
+$whisper:                 #eaeaea;
+$grey:                    #838383;
+$darkGrey:                #aaaaaa;
+$roman:                   #df6464;
+$yellowOrange:            #ffa542;
+$chardonnay:              #ffce7f;
+
+// Typography
+// ---------------------------------
+
+$ff-montserrat:           'Montserrat', 'Arial', sans-serif;
+
+// Animation
+// ---------------------------------
+
+$tf-default:              ease;
+$trans-default:           0.3s $tf-default;

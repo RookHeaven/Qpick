@@ -1,0 +1,137 @@
+@import '../../style/variables';
+@import '../../style/mixins';
+
+.button {
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  padding: 0;
+  background: none;
+  border: none;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+  user-select: none;
+  transition: all $trans-default;
+
+  &:disabled,
+  &__disabled {
+    opacity: 0.5;
+    pointer-events: none;
+  }
+
+  @include hover-focus {
+    color: darken($yellowOrange, 8%);
+  }
+
+  @include active {
+    color: darken($yellowOrange, 20%);
+    opacity: 0.8;
+  }
+
+  &__lang {
+    font-size: 15px;
+    font-weight: 500;
+    color: $blackTitle;
+  }
+
+  &__cart {
+    position: absolute;
+    top: 6px;
+    right: 19px;
+    width: 40px;
+    height: 40px;
+    color: $roman;
+    background-color: transparent;
+    border-radius: 30px;
+
+    @include hover-focus {
+      background-color: darken($roman, 8%);
+      color: $white;
+    }
+
+    @include active {
+      background-color: darken($roman, 20%);
+      color: $white;
+      opacity: 0.8;
+    }
+  }
+
+  &__iconTrash {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  &__quantity {
+    position: relative;
+    width: 35px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: $chardonnay;
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      height: 2px;
+      width: 16px;
+      background-color: $white;
+    }
+
+    @include hover-focus {
+      background-color: darken($black, 8%);
+    }
+
+    @include active {
+      background-color: darken($black, 20%);
+      opacity: 0.8;
+    }
+  }
+
+  &__order {
+    position: absolute;
+    left: 0;
+    bottom: -7px;
+    width: 100%;
+    padding: 22px 13px;
+    justify-content: center;
+    color: $white;
+    background-color: $blackTitle;
+    border-radius: 20px;
+
+    @include hover-focus {
+      color: $white;
+      background-color: darken($yellowOrange, 8%);
+    }
+
+    @include active {
+      color: $white;
+      background-color: darken($yellowOrange, 20%);
+      opacity: 0.8;
+    }
+  }
+
+  &.cartIncrease {
+    position: relative;
+
+    &::after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%) rotate(270deg);
+      height: 2px;
+      width: 16px;
+      background-color: $white;
+    }
+  }
+
+  &.active {
+    font-weight: 700;
+    color: $yellowOrange;
+  }
+}

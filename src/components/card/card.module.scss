@@ -1,0 +1,72 @@
+@import '../../style/variables';
+@import '../../style/mixins';
+
+.card {
+  background-color: $white;
+  box-shadow: 0 0 20px $black-10;
+  border-radius: 30px;
+  padding: 15px 22px 33px;
+
+  &__imgContainer {
+    margin: 0 auto 53px;
+    min-height: 240px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &__description {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    flex-wrap: wrap;
+  }
+
+  &__descriptionTop {
+    margin-bottom: 9px;
+    display: flex;
+    min-height: 36px;
+    justify-content: space-between;
+  }
+
+  &__descriptionBottom {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__name {
+    margin: 0;
+    font-weight: 600;
+    font-size: 17px;
+    color: $blackRussian;
+  }
+
+  &__price {
+    display: flex;
+    flex-direction: column;
+    justify-self: end;
+    text-align: center;
+  }
+
+  &__priceNew {
+    color: $yellowOrange;
+    margin-bottom: 1px;
+  }
+
+  &__priceOld {
+    color: $chardonnay;
+    font-size: 13px;
+    text-decoration: line-through;
+  }
+
+  &__rating {
+    display: flex;
+    align-items: center;
+    column-gap: 10px;
+    color: $chardonnay;
+  }
+
+  &__ratingText {
+    color: $grey;
+  }
+}

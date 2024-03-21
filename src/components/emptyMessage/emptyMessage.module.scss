@@ -1,0 +1,65 @@
+@import '../../style/variables';
+@import '../../style/mixins';
+
+.empty {
+  padding-top: 100px;
+
+  &__container {
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: $white;
+    border-radius: 30px;
+  }
+
+  &__title {
+    font-size: 36px;
+    color: $blackRussian;
+  }
+
+  span {
+    color: $yellowOrange;
+  }
+
+  &__inner {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 350px;
+    overflow: hidden;
+  }
+
+  &__image {
+    max-width: unset;
+    width: 700px;
+    height: 700px;
+  }
+
+  p{
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 30px;
+    text-align: center;
+  }
+
+  &__link {
+    padding: 20px;
+    border: 1px solid $yellowOrange;
+    border-radius: 30px;
+    color: $blackRussian;
+    transition: all $trans-default;
+
+    @include hover-focus {
+      background-color: darken($yellowOrange, 8%);
+      color: $white;
+    }
+
+    @include active {
+      background-color: darken($yellowOrange, 20%);
+      color: $white;
+      opacity: 0.8;
+    }
+  }
+}

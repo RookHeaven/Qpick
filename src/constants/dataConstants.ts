@@ -1,0 +1,148 @@
+import {IProduct} from '../@types/types.ts';
+
+export const data: IProduct[] = [
+  {
+    id: 1,
+    img: './images/Apple_BYZ_S852I.png',
+    title: 'Apple BYZ S852I',
+    priceOld: 3527,
+    price: 2927,
+    rate: 4.7,
+    category: 'headphones',
+  },
+  {
+    id: 2,
+    img: './images/Apple_EarPods.png',
+    title: 'Apple EarPods',
+    price: 2327,
+    rate: 4.5,
+    category: 'headphones',
+  },
+  {
+    id: 3,
+    img: './images/Apple_EarPods2.png',
+    title: 'Apple EarPods',
+    price: 2327,
+    rate: 4.5,
+    category: 'headphones',
+  },
+  {
+    id: 4,
+    img: './images/Apple_BYZ_S852I.png',
+    title: 'Apple BYZ S852I',
+    price: 2927,
+    rate: 4.7,
+    category: 'headphones',
+  },
+  {
+    id: 5,
+    img: './images/Apple_EarPods.png',
+    title: 'Apple EarPods',
+    price: 2327,
+    rate: 4.5,
+    category: 'headphones',
+  },
+  {
+    id: 6,
+    img: './images/Apple_EarPods2.png',
+    title: 'Apple EarPods',
+    price: 2327,
+    rate: 4.5,
+    category: 'headphones',
+  },
+  {
+    id: 7,
+    img: './images/Apple_AirPods.png',
+    title: 'Apple AirPods',
+    price: 9527,
+    rate: 4.7,
+    category: 'wirelessHeadphones',
+  },
+  {
+    id: 8,
+    img: './images/GERLAX_GH-04.png',
+    title: 'GERLAX GH-04',
+    price: 6527,
+    rate: 4.7,
+    category: 'wirelessHeadphones',
+  },
+  {
+    id: 9,
+    img: './images/BOROFONE_BO4.png',
+    title: 'BOROFONE BO4',
+    price: 7527,
+    rate: 4.7,
+    category: 'wirelessHeadphones',
+  },
+];
+
+// export const data: IData[] = [
+//   headphones: {
+//     {
+//       id: 1,
+//       img: './images/Apple_BYZ_S852I.png',
+//       title: 'Apple BYZ S852I',
+//       priceOld: 3527,
+//       price: 2927,
+//       rate: 4.7,
+//     },
+//     {
+//       id: 2,
+//       img: './images/Apple_EarPods.png',
+//       title: 'Apple EarPods',
+//       price: 2327,
+//       rate: 4.5,
+//     },
+//     {
+//       id: 3,
+//       img: './images/Apple_EarPods2.png',
+//       title: 'Apple EarPods',
+//       price: 2327,
+//       rate: 4.5,
+//     },
+//     {
+//       id: 4,
+//       img: './images/Apple_BYZ_S852I.png',
+//       title: 'Apple BYZ S852I',
+//       price: 2927,
+//       rate: 4.7,
+//     },
+//     {
+//       id: 5,
+//       img: './images/Apple_EarPods.png',
+//       title: 'Apple EarPods',
+//       price: 2327,
+//       rate: 4.5,
+//     },
+//     {
+//       id: 6,
+//       img: './images/Apple_EarPods2.png',
+//       title: 'Apple EarPods',
+//       price: 2327,
+//       rate: 4.5,
+//     },
+//   },
+//   wirelessHeadphones: {
+//     {
+//       id: 7,
+//       img: './images/Apple_AirPods.png',
+//       title: 'Apple AirPods',
+//       price: 9527,
+//       rate: 4.7,
+//     },
+//     {
+//       id: 8,
+//       img: './images/GERLAX_GH-04.png',
+//       title: 'GERLAX GH-04',
+//       price: 6527,
+//       rate: 4.7,
+//     },
+//     {
+//       id: 9,
+//       img: './images/BOROFONE_BO4.png',
+//       title: 'BOROFONE BO4',
+//       price: 7527,
+//       rate: 4.7,
+//     },
+//   }
+// ];

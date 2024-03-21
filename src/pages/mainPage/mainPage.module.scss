@@ -1,0 +1,13 @@
+@import '../../style/variables';
+@import '../../style/mixins';
+
+.catalog {
+  display: block;
+
+  &__title {
+    font-weight: 600;
+    font-size: 20px;
+    margin: 0 0 20px;
+    color: $grey;
+  }
+}

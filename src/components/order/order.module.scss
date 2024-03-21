@@ -1,0 +1,21 @@
+@import '../../style/variables';
+
+.order {
+  position: relative;
+  padding: 22px 20px 74px;
+  margin-top: 6px;
+  width: 100%;
+  max-width: 350px;
+  background-color: $white;
+  box-shadow: 0 0 20px $black-10;
+  border-radius: 30px;
+
+  &__details {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  span {
+    font-size: 15px;
+  }
+}

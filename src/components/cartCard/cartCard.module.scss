@@ -1,0 +1,62 @@
+@import '../../style/variables';
+@import '../../style/mixins';
+
+.cartCard {
+  position: relative;
+  padding: 7px 28px 16px 16px;
+  background-color: $white;
+  border-radius: 30px;
+  box-shadow: 0 0 20px $black-10;
+
+  &__top {
+    margin-bottom: 9px;
+    display: flex;
+    align-items: center;
+  }
+
+  &__bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    > span {
+      font-size: 15px;
+      font-weight: 600;
+      color: $blackRussian;
+    }
+  }
+
+  &__img {
+    max-width: 145px;
+    margin-right: 28px;
+  }
+
+  &__price {
+    display: flex;
+    flex-direction: column;
+    justify-self: end;
+  }
+
+  &__priceNew {
+    font-size: 15px;
+    font-weight: 600;
+    color: $darkGrey;
+  }
+
+  &__priceOld {
+    color: $chardonnay;
+    font-size: 13px;
+    text-decoration: line-through;
+  }
+
+  &__description {
+    color: $blackRussian;
+    font-weight: 500;
+  }
+
+  p {
+    padding-top: 33px;
+    margin-top: 0;
+    margin-bottom: 13px;
+  }
+}
