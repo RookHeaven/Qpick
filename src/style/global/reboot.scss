@@ -68,3 +68,55 @@ img {
   align-items: center;
   justify-content: center;
 }
+
+
+
+.overlay {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: $black-40;
+}
+
+.modal {
+  position: relative;
+  width: 40vw;
+  padding: 30px;
+  border-radius: 30px;
+  background-color: $white;
+}
+
+.modal.activeModal {
+  transform: scale(1);
+}
+
+.ReactModal__Overlay {
+  opacity: 0;
+  transition: 0.5s;
+}
+
+.ReactModal__Overlay--after-open{
+  opacity: 1;
+}
+
+.ReactModal__Overlay--before-close{
+  opacity: 0;
+}
+
+.ReactModal__Content {
+  transform: scale(0.5);
+  transition: 0.5s all;
+}
+
+.ReactModal__Content--after-open{
+  transform: scale(1);
+}
+
+.ReactModal__Content--before-close{
+  transform: scale(0.5);
+}

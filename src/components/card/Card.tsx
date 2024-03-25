@@ -48,7 +48,8 @@ export const Card: FC<TCard> = ({item}) => {
           </div>
           {!productFromCart || productFromCart.count === 0
             ? <Button isCardButton={true}
-                    onClickCardButton={() => onToggleProduct(item)}>Купить</Button>
+                      type={'button'}
+                      onClickCardButton={() => onToggleProduct(item)}>Купить</Button>
             : <QuantityButtons product={productFromCart}/>}
 
         </div>

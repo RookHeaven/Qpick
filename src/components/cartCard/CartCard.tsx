@@ -41,7 +41,8 @@ export const CartCard: FC<TCartCard> = ({product}) => {
       </div>
       <Button isRemoveButton={true}
               onClickRemoveButton={() => onRemoveProduct(product)}
-              text={'Удалить из корзины'}/>
+              text={'Удалить из корзины'}
+              type={'button'}/>
     </li>
   );
 };
