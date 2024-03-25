@@ -27,11 +27,13 @@ export const QuantityButtons: FC<TQuantityButtons> = ({product}) => {
     <div className={styles.quantity}>
       <Button isQuantityButton={true}
               isIncreaseButton={false}
+              type={'button'}
               onClickMinusButton={() => onRemoveProduct(product as IProduct)}
               text={'Убавить товар'}/>
       <span>{product?.count ?? 1}</span>
       <Button isQuantityButton={true}
               isIncreaseButton={true}
+              type={'button'}
               onClickPlusButton={() => onAddProduct(product as IProduct)}
               text={'Добавить товар'}/>
     </div>

@@ -58,7 +58,9 @@ export const Footer: FC = () => {
               {langButtons.map(item =>
                 <li key={item.name}
                     className={styles.footer__langItem}>
-                  <Button isLangButton={true} isActive={item.isActive}>{item.name}</Button>
+                  <Button isLangButton={true}
+                          type={'button'}
+                          isActive={item.isActive}>{item.name}</Button>
                 </li>)}
             </ul>
           </div>
