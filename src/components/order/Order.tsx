@@ -1,26 +1,26 @@
-import {Button} from '../button/Button.tsx';
+import { Button } from '../button/Button.tsx';
 
 import Modal from 'react-modal';
 
-import {FC, useEffect} from 'react';
+import { FC, useEffect } from 'react';
 
-import {useDispatch, useSelector} from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 
-import {IForm} from './types.ts';
+import { IForm } from './types.ts';
 
-import {closeModal, openModal} from '../../redux/slices/modal/modalSlice.ts';
+import { closeModal, openModal } from '../../redux/slices/modal/modalSlice.ts';
 
-import {RootState} from '../../redux/store.ts';
+import { RootState } from '../../redux/store.ts';
 
 import styles from './order.module.scss';
 
 export const Order: FC = () => {
-  const initialValues: IForm = {cardNumber: '', expiryDate: '', cvv: ''};
+  const initialValues: IForm = { cardNumber: '', expiryDate: '', cvv: '' };
 
-  const totalPrice = useSelector((state: RootState) => state.cart.totalPrice.toLocaleString())
-  const modalIsOpen = useSelector((state: RootState) => state.modal.modalIsOpen)
+  const totalPrice = useSelector((state: RootState) => state.cart.totalPrice.toLocaleString());
+  const modalIsOpen = useSelector((state: RootState) => state.modal.modalIsOpen);
 
   const dispatch = useDispatch();
 
@@ -29,12 +29,12 @@ export const Order: FC = () => {
   }, []);
 
   const onOpenModal = (): void => {
-    dispatch(openModal(true))
-  }
+    dispatch(openModal(true));
+  };
 
   const onCloseModal = (): void => {
-    dispatch(closeModal(false))
-  }
+    dispatch(closeModal(false));
+  };
 
   const validateForm = (values: IForm) => {
     const errors: IForm = {};
@@ -63,7 +63,7 @@ export const Order: FC = () => {
     }
 
     return errors;
-  }
+  };
 
 
   return (
@@ -92,7 +92,7 @@ export const Order: FC = () => {
             <Button isCloseModalButton={true}
                     onClickCloseModalButton={onCloseModal}
                     text={'Закрыть модальное окно'}
-                    type={'button'}/>
+                    type={'button'} />
             <h2>Введите данные вашей карты</h2>
             <div className={styles.form__wrapper}>
               <div className={styles.form__cardNumber}>
@@ -104,9 +104,9 @@ export const Order: FC = () => {
                   name={'cardNumber'}
                   placeholder={'Номер карты'}
                 />
-                <ErrorMessage name={"cardNumber"}
-                              component={"p"}
-                              className={styles.form__error}/>
+                <ErrorMessage name={'cardNumber'}
+                              component={'p'}
+                              className={styles.form__error} />
               </div>
               <div className={styles.form__input}>
                 <label className={'visually-hidden'}
@@ -117,9 +117,9 @@ export const Order: FC = () => {
                   name={'expiryDate'}
                   placeholder={'ММ/ГГ'}
                 />
-                <ErrorMessage name={"expiryDate"}
-                              component={"p"}
-                              className={styles.form__error}/>
+                <ErrorMessage name={'expiryDate'}
+                              component={'p'}
+                              className={styles.form__error} />
               </div>
               <div className={styles.form__input}>
                 <label className={'visually-hidden'}
@@ -132,9 +132,9 @@ export const Order: FC = () => {
                   minLength={3}
                   maxLength={4}
                 />
-                <ErrorMessage name={"cvv"}
-                              component={"p"}
-                              className={styles.form__error}/>
+                <ErrorMessage name={'cvv'}
+                              component={'p'}
+                              className={styles.form__error} />
               </div>
               <span>Сумма : {totalPrice} ₽</span>
               <Button isPaymentButton={true} type={'submit'}>Оплатить</Button>

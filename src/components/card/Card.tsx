@@ -1,37 +1,45 @@
-import {Button} from '../button/Button.tsx';
-import {QuantityButtons} from '../quantityButtons/QuantityButtons.tsx';
+import { Button } from '../button/Button.tsx';
+import { QuantityButtons } from '../quantityButtons/QuantityButtons.tsx';
 
-import {FC} from 'react';
+import { FC } from 'react';
 
-import {useDispatch, useSelector} from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 
-import {addToCart} from '../../redux/slices/cart/cartSlice.ts';
+import { openModal, setModalProduct } from '../../redux/slices/modal/modalSlice.ts';
+
+import { addToCart } from '../../redux/slices/cart/cartSlice.ts';
 
 import classNames from 'classnames';
 
-import {TCard} from './types.ts';
-import {IProduct} from '../../@types/types.ts';
-import {RootState} from '../../redux/store.ts';
+import { TCard } from './types.ts';
+import { IProduct } from '../../@types/types.ts';
+import { RootState } from '../../redux/store.ts';
 
 import Star from '../../assets/icons/star.svg?react';
 
 import styles from './card.module.scss';
 
 
-export const Card: FC<TCard> = ({item}) => {
-  const products = useSelector((state: RootState) => state.cart.products)
+export const Card: FC<TCard> = ({ item }) => {
+  const products = useSelector((state: RootState) => state.cart.products);
+
   const dispatch = useDispatch();
 
   const productFromCart: IProduct | undefined = products.find(product => product.id === item.id);
 
-  const onToggleProduct = (item: IProduct): void => {
+  const onAddProduct = (item: IProduct): void => {
     dispatch(addToCart(item));
-  }
+  };
+
+  const onOpenModal = (): void => {
+    dispatch(setModalProduct(item));
+    dispatch(openModal(true));
+  };
 
   return (
     <li className={classNames(styles.card, styles.catalog__item)}>
       <div className={styles.card__imgContainer}>
-        <img className={styles.card__img} src={item.img} alt={item.title}/>
+        <img className={styles.card__img} src={item.img} alt={item.title} />
       </div>
       <div className={styles.card__description}>
         <div className={styles.card__descriptionTop}>
@@ -43,17 +51,20 @@ export const Card: FC<TCard> = ({item}) => {
         </div>
         <div className={styles.card__descriptionBottom}>
           <div className={styles.card__rating}>
-            <Star/>
+            <Star />
             <span className={styles.card__ratingText}>{item.rate}</span>
           </div>
-          {!productFromCart || productFromCart.count === 0
+          {!productFromCart
             ? <Button isCardButton={true}
                       type={'button'}
-                      onClickCardButton={() => onToggleProduct(item)}>Купить</Button>
-            : <QuantityButtons product={productFromCart}/>}
-
+                      onClickCardButton={() => onAddProduct(item)}>Купить</Button>
+            : <QuantityButtons product={productFromCart} />}
         </div>
       </div>
+      <Button isInfoButton={true}
+              onClickInfoButton={onOpenModal}
+              text={'Открыть подробную информацию о товаре'}
+              type={'button'} />
     </li>
   );
 };

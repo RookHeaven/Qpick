@@ -1,11 +1,12 @@
 /// <reference types="vite-plugin-svgr/client" />
 
-import {FC, JSX} from 'react';
+import { FC, JSX } from 'react';
 
 import Trash from '../../assets/icons/trash.svg?react';
 import Close from '../../assets/icons/close.svg?react';
+import Info from '../../assets/icons/info.svg?react';
 
-import {IButton} from './types.ts';
+import { IButton } from './types.ts';
 
 import classNames from 'classnames';
 
@@ -14,6 +15,7 @@ import styles from './button.module.scss';
 export const Button: FC<IButton> = (props) => {
   const {
     isCardButton,
+    isModalCardButton,
     isLangButton,
     isActive,
     isRemoveButton,
@@ -22,24 +24,27 @@ export const Button: FC<IButton> = (props) => {
     isOrderButton,
     isCloseModalButton,
     isPaymentButton,
+    isInfoButton,
     onClickCardButton,
     onClickRemoveButton,
     onClickMinusButton,
     onClickPlusButton,
     onClickOrderButton,
     onClickCloseModalButton,
+    onClickInfoButton,
     text,
     type,
-    children
+    children,
   } = props;
+
   const renderButton = (): JSX.Element | undefined => {
     if (isCardButton) {
       return <button
         type={type}
         onClick={onClickCardButton}
-        className={classNames(styles.button, styles.button__card)}>
+        className={classNames(styles.button, styles.button__card, isModalCardButton && styles.cardModal)}>
         {children}
-      </button>
+      </button>;
     }
 
     if (isLangButton) {
@@ -47,7 +52,7 @@ export const Button: FC<IButton> = (props) => {
         type={type}
         className={classNames(styles.button, styles.button__lang, isActive && styles.active)}>
         {children}
-      </button>
+      </button>;
     }
 
     if (isRemoveButton) {
@@ -57,8 +62,8 @@ export const Button: FC<IButton> = (props) => {
         className={classNames(styles.button, styles.button__cart)}
         title={text}
         aria-label={text}>
-        <Trash className={styles.button__iconTrash}/>
-      </button>
+        <Trash className={styles.button__iconTrash} />
+      </button>;
     }
 
     if (isQuantityButton) {
@@ -68,7 +73,7 @@ export const Button: FC<IButton> = (props) => {
         className={classNames(styles.button, styles.button__quantity, isIncreaseButton && styles.cartIncrease)}
         title={text}
         aria-label={text}>
-      </button>
+      </button>;
     }
 
     if (isOrderButton) {
@@ -77,7 +82,7 @@ export const Button: FC<IButton> = (props) => {
         onClick={onClickOrderButton}
         className={classNames(styles.button, styles.button__order)}>
         {children}
-      </button>
+      </button>;
     }
 
     if (isCloseModalButton) {
@@ -87,8 +92,19 @@ export const Button: FC<IButton> = (props) => {
         className={classNames(styles.button, styles.button__closeModal)}
         title={text}
         aria-label={text}>
-        <Close className={styles.button__iconClose}/>
-      </button>
+        <Close className={styles.button__iconClose} />
+      </button>;
+    }
+
+    if (isInfoButton) {
+      return <button
+        type={type}
+        onClick={onClickInfoButton}
+        className={classNames(styles.button, styles.button__info)}
+        title={text}
+        aria-label={text}>
+        <Info className={styles.button__iconInfo} />
+      </button>;
     }
 
     if (isPaymentButton) {
@@ -96,9 +112,9 @@ export const Button: FC<IButton> = (props) => {
         type={type}
         className={classNames(styles.button, styles.button__submit)}>
         {children}
-      </button>
+      </button>;
     }
-  }
+  };
 
   const items: JSX.Element | undefined = renderButton();
 

@@ -1,18 +1,18 @@
-import {Button} from '../button/Button.tsx';
-import {QuantityButtons} from '../quantityButtons/QuantityButtons.tsx';
+import { Button } from '../button/Button.tsx';
+import { QuantityButtons } from '../quantityButtons/QuantityButtons.tsx';
 
-import {FC} from 'react';
+import { FC } from 'react';
 
-import {useDispatch} from 'react-redux';
+import { useDispatch } from 'react-redux';
 
-import {removeFromCart} from '../../redux/slices/cart/cartSlice.ts';
+import { removeFromCart } from '../../redux/slices/cart/cartSlice.ts';
 
-import {TCartCard} from './types.ts';
-import {IProduct} from '../../@types/types.ts';
+import { TCartCard } from './types.ts';
+import { IProduct } from '../../@types/types.ts';
 
 import styles from './cartCard.module.scss';
 
-export const CartCard: FC<TCartCard> = ({product}) => {
+export const CartCard: FC<TCartCard> = ({ product }) => {
   const dispatch = useDispatch();
 
   const formattedPrice: string = product.price.toLocaleString();
@@ -21,12 +21,12 @@ export const CartCard: FC<TCartCard> = ({product}) => {
 
   const onRemoveProduct = (item: IProduct): void => {
     dispatch(removeFromCart(item));
-  }
+  };
 
   return (
     <li className={styles.cartCard}>
       <div className={styles.cartCard__top}>
-        <img className={styles.cartCard__img} src={product.img} alt={product.title}/>
+        <img className={styles.cartCard__img} src={product.img} alt={product.title} />
         <div className={styles.cartCard__description}>
           <p>{product.title}</p>
           <div className={styles.cartCard__price}>
@@ -36,13 +36,13 @@ export const CartCard: FC<TCartCard> = ({product}) => {
         </div>
       </div>
       <div className={styles.cartCard__bottom}>
-        <QuantityButtons product={product}/>
+        <QuantityButtons product={product} />
         <span>{formattedCardPrice} ₽</span>
       </div>
       <Button isRemoveButton={true}
               onClickRemoveButton={() => onRemoveProduct(product)}
               text={'Удалить из корзины'}
-              type={'button'}/>
+              type={'button'} />
     </li>
   );
 };

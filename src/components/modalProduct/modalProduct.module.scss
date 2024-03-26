@@ -1,0 +1,90 @@
+@import '../../style/variables';
+@import '../../style/mixins';
+
+.info {
+  display: flex;
+  column-gap: 40px;
+
+  &__left {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40%;
+    height: auto;
+  }
+
+  &__right {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 50%;
+  }
+
+  &__wrapper {
+    display: flex;
+    flex-direction: column;
+    row-gap: 15px;
+  }
+
+  &__name {
+    font-size: 24px;
+    margin: 0;
+  }
+
+  &__rating {
+    display: flex;
+    align-items: center;
+    column-gap: 10px;
+    color: #ffce7f;
+  }
+
+  &__ratingText {
+    color: $grey;
+  }
+
+  &__price {
+    display: flex;
+    align-items: center;
+    column-gap: 10px;
+  }
+
+  &__priceNew {
+    font-size: 24px;
+    color: $yellowOrange;
+  }
+
+  &__priceOld {
+    font-size: 16px;
+    color: $chardonnay;
+    text-decoration: line-through;
+  }
+
+  &__link {
+    width: 100%;
+    padding: 13px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    border: none;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+    user-select: none;
+    transition: all $trans-default;
+    color: $yellowOrange;
+    background-color: $yellowOrange-20;
+    border-radius: 20px;
+
+    @include hover-focus {
+      color: $yellowOrange;
+      background-color: $yellowOrange-30;
+    }
+
+    @include active {
+      color: $yellowOrange;
+      background-color: $yellowOrange-30;
+      opacity: 0.8;
+    }
+  }
+}

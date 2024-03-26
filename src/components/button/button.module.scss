@@ -137,6 +137,22 @@
     }
   }
 
+  &__info {
+    position: absolute;
+    top: 55%;
+    right: 10%;
+    color: $darkGrey;
+
+    @include hover-focus {
+      color: darken($yellowOrange, 8%);
+    }
+
+    @include active {
+      color: darken($yellowOrange, 20%);
+      opacity: 0.8;
+    }
+  }
+
   &__submit {
     justify-content: center;
     padding: 15px;
@@ -170,6 +186,26 @@
       height: 2px;
       width: 16px;
       background-color: $white;
+    }
+  }
+
+  &.cardModal {
+    width: 100%;
+    padding: 13px;
+    justify-content: center;
+    color: $white;
+    background-color: $blackTitle;
+    border-radius: 20px;
+
+    @include hover-focus {
+      color: $white;
+      background-color: darken($yellowOrange, 8%);
+    }
+
+    @include active {
+      color: $white;
+      background-color: darken($yellowOrange, 20%);
+      opacity: 0.8;
     }
   }
 

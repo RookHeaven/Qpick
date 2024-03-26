@@ -1,12 +1,12 @@
-import {Button} from '../button/Button.tsx';
+import { Button } from '../button/Button.tsx';
 
-import {Link} from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
-import {FC} from 'react';
+import { FC } from 'react';
 
-import {langButtons, navLinks} from '../../constants/itemConstants.ts';
+import { langButtons, navLinks } from '../../constants/itemConstants.ts';
 
-import {ISocialLink} from './types.ts';
+import { ISocialLink } from './types.ts';
 
 import classNames from 'classnames';
 
@@ -19,27 +19,27 @@ import styles from './footer.module.scss';
 
 const socialLinks: ISocialLink[] = [
   {
-    icon: <Vk/>,
+    icon: <Vk />,
     title: 'Вконтакте',
-    href: 'https://vk.com/'
+    href: 'https://vk.com/',
   },
   {
-    icon: <Telegram/>,
+    icon: <Telegram />,
     title: 'Телеграм',
-    href: 'https://web.telegram.org/k/'
+    href: 'https://web.telegram.org/k/',
   },
   {
-    icon: <Whatsapp/>,
+    icon: <Whatsapp />,
     title: 'Ватсапп',
-    href: 'https://www.whatsapp.com/'
-  }
+    href: 'https://www.whatsapp.com/',
+  },
 ];
 
 export const Footer: FC = () => {
   return (
     <footer className={classNames(styles.footer, 'container')}>
       <div className={styles.footer__container}>
-        <Link className={styles.footer__logo} to="/">QPICK</Link>
+        <Link className={styles.footer__logo} to='/'>QPICK</Link>
         <div className={styles.footer__wrapper}>
           <nav className={styles.footer__nav}>
             <ul className={styles.footer__navList}>
@@ -53,7 +53,7 @@ export const Footer: FC = () => {
             </ul>
           </nav>
           <div className={styles.footer__lang}>
-            <Lang/>
+            <Lang />
             <ul className={styles.footer__langList}>
               {langButtons.map(item =>
                 <li key={item.name}

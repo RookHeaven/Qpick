@@ -1,7 +1,8 @@
-import {ReactNode} from 'react';
+import { ReactNode } from 'react';
 
 export interface IButton {
   isCardButton?: boolean;
+  isModalCardButton?: boolean;
   isLangButton?: boolean;
   isActive?: boolean;
   isRemoveButton?: boolean;
@@ -10,13 +11,15 @@ export interface IButton {
   isOrderButton?: boolean;
   isCloseModalButton?: boolean;
   isPaymentButton?: boolean;
+  isInfoButton?: boolean;
   text?: string;
-  type: 'button' | 'submit'| 'reset';
+  type: 'button' | 'submit' | 'reset';
   onClickCardButton?: () => void;
   onClickRemoveButton?: () => void;
   onClickMinusButton?: () => void;
   onClickPlusButton?: () => void;
   onClickOrderButton?: () => void;
   onClickCloseModalButton?: () => void;
+  onClickInfoButton?: () => void;
   children?: ReactNode;
 }

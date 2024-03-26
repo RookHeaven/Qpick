@@ -1,31 +1,31 @@
-import {ILangButton, INavLink} from '../components/footer/types.ts';
+import { ILangButton, INavLink } from '../components/footer/types.ts';
 
 export const navLinks: INavLink[] = [
   {
     name: 'Избранное',
-    to: ''
+    to: '',
   },
   {
     name: 'Корзина',
-    to: '/cart'
+    to: '/cart',
   },
   {
     name: 'Контакты',
-    to: ''
+    to: '',
   },
   {
     name: 'Условия сервиса',
-    to: ''
-  }
+    to: '',
+  },
 ];
 
 export const langButtons: ILangButton[] = [
   {
     name: 'Рус',
-    isActive: true
+    isActive: true,
   },
   {
     name: 'Eng',
-    isActive: false
-  }
+    isActive: false,
+  },
 ];
