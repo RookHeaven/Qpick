@@ -5,12 +5,21 @@
   display: flex;
   column-gap: 40px;
 
+  @include vp-1199 {
+    flex-direction: column;
+    row-gap: 30px;
+  }
+
   &__left {
     display: flex;
     justify-content: center;
     align-items: center;
     width: 40%;
     height: auto;
+
+    @include vp-1199 {
+      width: auto;
+    }
   }
 
   &__right {
@@ -18,15 +27,21 @@
     flex-direction: column;
     justify-content: space-between;
     width: 50%;
+
+    @include vp-1199 {
+      width: auto;
+    }
   }
 
   &__wrapper {
+    padding-bottom: 20px;
     display: flex;
     flex-direction: column;
     row-gap: 15px;
   }
 
   &__name {
+    padding-right: 35px;
     font-size: 24px;
     margin: 0;
   }

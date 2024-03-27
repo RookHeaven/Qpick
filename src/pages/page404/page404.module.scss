@@ -9,19 +9,34 @@
   width: 100vw;
   min-height: 100vh;
   background-color: $white;
-  border-radius: 10px;
+
+  &__container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
 
   &__image {
     display: block;
     width: 650px;
     height: 550px;
     margin: 0 auto;
+
+    @include vp-1199 {
+      width: auto;
+      height: auto;
+    }
   }
 
   &__text {
     text-align: center;
     font-weight: bold;
     font-size: 24px;
+
+    @include vp-767 {
+      font-size: 20px;
+    }
   }
 
   &__link {
@@ -29,6 +44,7 @@
     border: 1px solid $yellowOrange;
     border-radius: 30px;
     color: $blackRussian;
+    text-align: center;
     transition: all $trans-default;
 
     @include hover-focus {
@@ -40,6 +56,10 @@
       background-color: darken($yellowOrange, 20%);
       color: $white;
       opacity: 0.8;
+    }
+
+    @include vp-767 {
+      font-size: 16px;
     }
   }
 }

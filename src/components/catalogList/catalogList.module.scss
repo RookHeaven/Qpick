@@ -1,3 +1,5 @@
+@import '../../style/mixins';
+
 .catalog__list {
   margin: 0 0 30px;
   padding: 0;
@@ -5,6 +7,10 @@
   list-style: none;
   grid-template-columns: repeat(3, 1fr);
   gap: 30px;
+
+  @include vp-1199 {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 
 .catalog__list:last-child {

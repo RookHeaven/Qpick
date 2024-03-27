@@ -172,6 +172,10 @@
       background-color: darken($yellowOrange, 20%);
       opacity: 0.8;
     }
+
+    @include vp-1199 {
+      width: 100%;
+    }
   }
 
   &.cartIncrease {

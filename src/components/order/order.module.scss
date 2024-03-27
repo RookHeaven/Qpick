@@ -1,4 +1,5 @@
 @import '../../style/variables';
+@import '../../style/mixins';
 
 .order {
   position: relative;
@@ -9,6 +10,11 @@
   background-color: $white;
   box-shadow: 0 0 20px $black-10;
   border-radius: 30px;
+
+  @include vp-1199 {
+    max-width: 100%;
+    margin: 0;
+  }
 
   &__details {
     display: flex;
@@ -23,9 +29,21 @@
 .form {
 
   h2 {
+    padding-right: 60px;
     font-size: 26px;
     margin-top: 0;
     margin-bottom: 30px;
+
+    @include vp-1199 {
+      padding-right: 50px;
+      font-size: 22px;
+    }
+  }
+
+  span {
+    @include vp-1199 {
+      margin-bottom: 20px;
+    }
   }
 
   &__wrapper {

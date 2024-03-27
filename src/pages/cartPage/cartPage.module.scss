@@ -1,7 +1,9 @@
 @import '../../style/variables';
+@import '../../style/mixins';
 
 .cart {
   display: block;
+  padding-bottom: 40px;
 
   &__title {
     margin-top: 0;
@@ -15,5 +17,10 @@
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
+
+    @include vp-1199 {
+      row-gap: 20px;
+      flex-wrap: wrap;
+    }
   }
 }
