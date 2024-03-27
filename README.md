@@ -1,7 +1,5 @@
 # Qpick
 
-The project is still in development...
-
 Test task for Neoflex company.
 
 "Qpick" is an online store audio accessories. <br>
