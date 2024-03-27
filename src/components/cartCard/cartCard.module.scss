@@ -58,5 +58,9 @@
     padding-top: 33px;
     margin-top: 0;
     margin-bottom: 13px;
+
+    @include vp-767 {
+      font-size: 15px;
+    }
   }
 }

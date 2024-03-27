@@ -2,7 +2,9 @@
 @import '../../style/mixins';
 
 .empty {
-  padding-top: 100px;
+  @include vp-767 {
+    padding-bottom: 50px;
+  }
 
   &__container {
     padding: 30px;
@@ -16,6 +18,10 @@
   &__title {
     font-size: 36px;
     color: $blackRussian;
+
+    @include vp-767 {
+      font-size: 26px;
+    }
   }
 
   span {
@@ -35,6 +41,11 @@
     max-width: unset;
     width: 700px;
     height: 700px;
+
+    @include vp-767 {
+      width: 500px;
+      height: 500px;
+    }
   }
 
   p {
@@ -42,6 +53,10 @@
     font-weight: 400;
     line-height: 30px;
     text-align: center;
+
+    @include vp-767 {
+      font-size: 16px;
+    }
   }
 
   &__link {
@@ -49,6 +64,7 @@
     border: 1px solid $yellowOrange;
     border-radius: 30px;
     color: $blackRussian;
+    text-align: center;
     transition: all $trans-default;
 
     @include hover-focus {
@@ -60,6 +76,10 @@
       background-color: darken($yellowOrange, 20%);
       color: $white;
       opacity: 0.8;
+    }
+
+    @include vp-767 {
+      font-size: 16px;
     }
   }
 }

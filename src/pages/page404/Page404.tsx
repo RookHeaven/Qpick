@@ -2,10 +2,11 @@ import { FC } from 'react';
 
 import { Link } from 'react-router-dom';
 
+import classNames from 'classnames';
+
 import styles from './page404.module.scss';
 
 import img from './404.gif';
-import classNames from 'classnames';
 
 export const Page404: FC = () => {
   return (

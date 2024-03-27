@@ -4,12 +4,9 @@ import { FC, JSX } from 'react';
 
 import { TCatalogList } from './types.ts';
 
-
 import styles from './catalogList.module.scss';
 
-
 export const CatalogList: FC<TCatalogList> = ({ data, category }) => {
-
 
   const items: JSX.Element[] = data
     .filter(item => item.category === category)

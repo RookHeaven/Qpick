@@ -1,4 +1,5 @@
 @import '../../style/variables';
+@import '../../style/mixins';
 
 *,
 *:before,
@@ -88,6 +89,10 @@ img {
   padding: 30px;
   border-radius: 30px;
   background-color: $white;
+
+  @include vp-767 {
+    width: 90vw;
+  }
 }
 
 .modal.activeModal {

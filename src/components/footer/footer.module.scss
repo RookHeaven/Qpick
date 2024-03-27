@@ -11,6 +11,11 @@
     background-color: $white;
     border-radius: 30px 30px 0 0;
     box-shadow: 0 0 20px $black-10;
+
+    @include vp-767 {
+      flex-direction: column;
+      row-gap: 20px;
+    }
   }
 
   &__logo {
@@ -28,6 +33,10 @@
       color: darken($yellowOrange, 20%);
       opacity: 0.8;
     }
+
+    @include vp-1199 {
+      margin: 0;
+    }
   }
 
   &__wrapper {
@@ -38,6 +47,11 @@
     @include vp-1199 {
       column-gap: unset;
     }
+
+    @include vp-767 {
+      display: contents;
+      padding: 0;
+    }
   }
 
   &__navList {
@@ -46,14 +60,26 @@
     margin: 0;
     padding: 0;
     list-style: none;
+
+    @include vp-767 {
+      row-gap: 12px;
+    }
   }
 
   &__navItem {
     margin-bottom: 12px;
+
+    @include vp-767 {
+      margin: 0;
+    }
   }
 
   &__navItem:last-child {
     margin-bottom: 35px;
+
+    @include vp-767 {
+      margin: 0;
+    }
   }
 
   &__navLink {
@@ -81,6 +107,7 @@
     margin: 0;
     padding: 0;
     display: flex;
+    flex-wrap: wrap;
     column-gap: 15px;
     list-style: none;
   }

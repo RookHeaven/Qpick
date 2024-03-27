@@ -38,11 +38,9 @@
       padding-right: 50px;
       font-size: 22px;
     }
-  }
 
-  span {
-    @include vp-1199 {
-      margin-bottom: 20px;
+    @include vp-767 {
+      font-size: 18px;
     }
   }
 
@@ -51,16 +49,36 @@
     flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
+
+    @include vp-1199 {
+      row-gap: 20px;
+    }
+
+    @include vp-767 {
+      flex-direction: column;
+    }
   }
 
   &__cardNumber {
     width: 100%;
     margin-bottom: 20px;
+
+    @include vp-1199 {
+      margin: 0;
+    }
   }
 
   &__input {
     width: 48%;
     margin-bottom: 20px;
+
+    @include vp-1199 {
+      margin: 0;
+    }
+
+    @include vp-767 {
+      width: 100%;
+    }
   }
 
   input {
